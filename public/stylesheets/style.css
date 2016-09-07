@@ -1,8 +1,29 @@
+/* line 1, ../../compass-boilerplate/sass/style.scss */
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  background-color: lightgray;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+/* line 6, ../../compass-boilerplate/sass/style.scss */
+h1 {
+  text-align: center;
+}
+
+/* line 9, ../../compass-boilerplate/sass/style.scss */
+#image {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+/* line 14, ../../compass-boilerplate/sass/style.scss */
+#image img {
+  height: 350px;
+}
+
+/* line 17, ../../compass-boilerplate/sass/style.scss */
+.button-holder {
+  padding: 10px 40%;
+  text-align: center;
 }

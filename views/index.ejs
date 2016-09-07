@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+
+<h1>A node.js voting game - is the electric car below <em>really</em> electric?</h1>
+
+<div id="image">
+	<img src="/images/<%= imageToRender %>">
+</div>
+<div class="button-holder">
+	<div class="buttom-form">
+		<form class="vote-button" action="/electric" method="post"> <!-- action="where is it going?" -->
+			<input type="hidden" name="image" value="<%= imageToRender %>">
+			<input type="submit" name="submit" class="btn btn-info" value="Electric!">
+			<input type="submit" name="submit" class="btn btn-danger" value="Poser!">
+		</form> 
+
+	</div>
+</div>
+
+
+</body>
+</html>
+
