@@ -1,5 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var multer = require("multer");
+var upload = multer({dest: "public/images"});
+var type = upload.single("fileUploaded");
+var fs = require("fs");
 
 //1. Connect to MongoDB
 var mongodb = require("mongodb");
@@ -50,6 +54,29 @@ mongoClient.connect(mongoUrl, function(error, database) {
 // HTTP, ports, and routing
 // Lots of Linux
 // Nodemon
+
+
+//Add multer file upload
+router.post("/form_submit", type, function(req, res, next) {
+	// console.log(req.file);
+	var tmp_path = req.file.path;
+	var target_path = "public/images/" + req.file.originalname;
+	fs.readFile(tmp_path, function(error, data) {
+		fs.writeFile(target_path, data, function(error) {
+			// res.json("File uploaded to " + target_path);
+			// db.insert into mongo, the path of the new file	
+
+			// db.collection("images").insertOne({
+			// 	imgSrc: req.body.image, 
+				
+			// });
+			res.redirect("/");
+		});
+	});
+});
+router.get("/form_submit", function(req, res, next) {
+	res.render("form_submit", {})
+});
 
 router.get('/', function(req, res, next) {
 //5. Find all the photos the user has voted on and load an array up with them
